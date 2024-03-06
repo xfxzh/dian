@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="a">按钮1</button>
+    <button class="a">按钮2</button>
+    <button class="a">按钮3</button>
+</body>
+<script>
+    var hh = document.querySelectorAll('button')
+    for (let index = 0; index < hh.length; index++) {
+        hh[index].onclick = function () {
+            if (hh[index].className == 'a') {
+                hh[index].className = 'b'
+            } else {
+
+                hh[index].className = 'a'
+            }
+        }
+
+    }
+    let F4 = ['酷酷酷', '六六六', '略略略', '啦啦啦']
+    let [kkk, 六六六, 略略略, 啦啦啦] = F4
+    console.log(kkk);
+    let obj = {
+        name: '六六六',
+        age: '52',
+        asy: function () {
+            alert('zuo')
+        }
+    }
+    let { name: age } = obj
+    // console.log(name, age);
+    let name = '迪迦'
+    let che = function () {
+        console.log('你相信光吗');
+    }
+    const objj = {
+        name,
+        che,
+    }
+    function Resdr(name, age) {
+        this.name = name
+        this.age = age
+    }
+    const proty = new Resdr('小明', 18)
+    console.log(proty.name);
+</script>
+<style>
+    .a {
+        background-color: pink;
+    }
+
+    .b {
+        background-color: #fff;
+    }
+
+    button {
+        width: 300px;
+        height: 200px;
+        border: 0;
+    }
+</style>
+
+</html>

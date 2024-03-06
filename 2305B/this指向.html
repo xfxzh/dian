@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var A='name'
+    console.log(this);
+    var obj={
+        name:'A',
+        say:function(){
+            console.log(this.name);
+        }
+    }
+    obj.say.call(A)
+    // var A = 'window'
+    // var A = {
+    //     name: 'A',
+    //     sayHello: function(){
+    //         var s=()=>console.log(this.name);
+    //         return s
+    //     }
+    // }
+    // A.sayHello()
+    // function add(a,b,c){
+    //     return a+b+c
+    // }
+    // let rua=add(1,2)
+    // console.log(rua);
+    // function arr({hosy='feun',name,password,autt}){
+    //     console.log(hosy);
+    // }
+    // arr({
+    //     hosy:'efuiomfuio',
+    //     name:'route',
+    //     password:'route',
+    //     autt:2300
+    // })
+//    const arr=(...name)=>{
+//     console.log(...name);
+//    }
+//    arr(1,2,3,5,4,8)
+</script>
+<style>
+
+</style>
+
+</html>

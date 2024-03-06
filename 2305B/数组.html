@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// var arr=['kkk','llll','ppp']
+// var titi=['酷酷酷','略略略','屁屁屁']
+// var Tow=[...arr,...titi]
+// console.log(Tow);
+// function name(params) {
+//     console.log(arguments);
+// }
+// name(...arr)
+// const xiyou=['ts','swk','zbj','ss']
+// for (const v of xiyou) {
+//     console.log(v);
+// }
+// let iterato=xiyou[Symbol.iterator]()
+// console.log(iterato);
+// console.log(iterato.next());
+// console.log(iterato.next());
+// console.log(iterato.next());
+// console.log(iterato.next());
+// console.log(iterato.next());
+// function * fn(){
+//     yield '几个一把'
+//     yield 'djwi'
+//     yield 'fha'
+// }
+// let icom=fn()
+// console.log(icom);
+// console.log(icom.next());
+// console.log(icom.next());
+// console.log(icom.next());
+// console.log(icom.next());
+function * fn(arg){
+    let one= yield arg
+    let tow= yield 'djwi'
+    let three= yield 'fha'
+}
+let icom=fn('666')
+console.log(icom);
+console.log(icom.next('5555'));
+console.log(icom.next('lll'));
+console.log(icom.next());
+console.log(icom.next());
+</script>
+<style>
+
+</style>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>2305A班点名器</h1>
+    <p class="time"></p>
+    <div>
+        <div class="box">
+            <div class="c">
+                <div class="reght">
+
+                </div>
+                <button class="dian">点击</button>
+                <button class="sh">双人</button>
+                <button class="nan">男生</button>
+                <button class="nv">女生</button>
+            </div>
+            <p class="tit"></p>
+        </div>
+
+    </div>
+</body>
+<script>
+    let tome = document.querySelector('.time')
+    let tit = document.querySelector('.tit')
+    let dian = document.querySelector('.dian')
+    let nan = document.querySelector('.nan')
+    let b1 = document.querySelector('.reght')
+    let nv = document.querySelector('.nv')
+    let sh = document.querySelector('.sh')
+    let arr1 = []
+    let arr2 = []
+    var tt = null
+    var n = null
+    var ti = null
+    let arr = [
+        {
+            name: "姚新奇",
+            six: "男",
+        },
+        {
+            name: "黄文龙",
+            six: "男",
+        },
+        {
+            name: "杨文航 ",
+            six: "男",
+        },
+        {
+            name: "石海滨",
+            six: "男",
+        },
+        {
+            name: "刘乐",
+            six: "男",
+        },
+        {
+            name: "韩昊天 ",
+            six: "男",
+        },
+        {
+            name: "王子默",
+            six: "男",
+        },
+        {
+            name: "黄金祥",
+            six: "男",
+        },
+        {
+            name: "孙晨",
+            six: "男",
+        },
+        {
+            name: "李周硕",
+            six: "男",
+        },
+        {
+            name: "孙小云",
+            six: "女",
+        },
+        {
+            name: "杨名迪",
+            six: "女",
+        },
+        {
+            name: "孙泽森",
+            six: "男",
+        },
+        {
+            name: "米子奇",
+            six: "男",
+        },
+        {
+            name: "李洋",
+            six: "男",
+        },
+        {
+            name: "马浩阳",
+            six: "男",
+        },
+        {
+            name: "侯婉茹",
+            six: "女",
+        },
+        {
+            name: "俎召铃",
+            six: "男",
+        },
+        {
+            name: "白颖帆",
+            six: "男",
+        },
+        {
+            name: "王震霆",
+            six: "男",
+        },
+        {
+            name: "李金阳",
+            six: "女",
+        },
+        {
+            name: "肖富兴",
+            six: "男",
+        },
+        {
+            name: "贾亚锐",
+            six: "男",
+        },
+        {
+            name: "胡星宇",
+            six: "男",
+        },
+        {
+            name: "卢孟磊",
+            six: "男",
+        },
+        {
+            name: "邓恒智",
+            six: "男",
+        },
+        {
+            name: "胡明言",
+            six: "男",
+        },
+        {
+            name: "徐政田",
+            six: "男",
+        },
+        {
+            name: "刘豪然",
+            six: "男",
+        },
+        {
+            name: "和清龙",
+            six: "男",
+        },
+        {
+            name: "刘东宇",
+            six: "男",
+        },
+        {
+            name: "胡雅茜 ",
+            six: "女",
+        },
+    ]
+    let obj = [
+        {
+            name: "姚新奇",
+            six: "男",
+        },
+        {
+            name: "黄文龙",
+            six: "男",
+        },
+        {
+            name: "杨文航 ",
+            six: "男",
+        },
+        {
+            name: "石海滨",
+            six: "男",
+        },
+        {
+            name: "刘乐",
+            six: "男",
+        },
+        {
+            name: "韩昊天 ",
+            six: "男",
+        },
+        {
+            name: "王子默",
+            six: "男",
+        },
+        {
+            name: "黄金祥",
+            six: "男",
+        },
+        {
+            name: "孙晨",
+            six: "男",
+        },
+        {
+            name: "李周硕",
+            six: "男",
+        },
+        {
+            name: "孙小云",
+            six: "女",
+        },
+        {
+            name: "杨名迪",
+            six: "女",
+        },
+        {
+            name: "孙泽森",
+            six: "男",
+        },
+        {
+            name: "米子奇",
+            six: "男",
+        },
+        {
+            name: "李洋",
+            six: "男",
+        },
+        {
+            name: "马浩阳",
+            six: "男",
+        },
+        {
+            name: "侯婉茹",
+            six: "女",
+        },
+        {
+            name: "俎召铃",
+            six: "男",
+        },
+        {
+            name: "白颖帆",
+            six: "男",
+        },
+        {
+            name: "王震霆",
+            six: "男",
+        },
+        {
+            name: "李金阳",
+            six: "女",
+        },
+        {
+            name: "肖富兴",
+            six: "男",
+        },
+        {
+            name: "贾亚锐",
+            six: "男",
+        },
+        {
+            name: "胡星宇",
+            six: "男",
+        },
+        {
+            name: "卢孟磊",
+            six: "男",
+        },
+        {
+            name: "邓恒智",
+            six: "男",
+        },
+        {
+            name: "胡明言",
+            six: "男",
+        },
+        {
+            name: "徐政田",
+            six: "男",
+        },
+        {
+            name: "刘豪然",
+            six: "男",
+        },
+        {
+            name: "和清龙",
+            six: "男",
+        },
+        {
+            name: "刘东宇",
+            six: "男",
+        },
+        {
+            name: "胡雅茜 ",
+            six: "女",
+        },
+    ];
+    for (let i = 0; i < obj.length; i++) {
+        b1.innerHTML += '<span>' + obj[i].name + '</span>'
+    }
+    for (let i = 0; i < obj.length; i++) {
+        if (obj[i].six == '男') {
+            arr1.push(obj[i].name)
+        }
+    }
+    for (let i = 0; i < obj.length; i++) {
+        if (obj[i].six == '女') {
+            arr2.push(obj[i].name)
+        }
+    }
+    setInterval(function () {
+        var time = new Date()
+        var year = time.getFullYear()
+        var mouth = time.getMonth()
+        var dste = time.getDate()
+        var hours = checkTime(time.getHours())
+        var minu = checkTime(time.getMinutes())
+        var cond = checkTime(time.getSeconds())
+        function checkTime(i) {
+            if (i < 10) return '0' + i
+            return i
+        }
+        tome.innerHTML = '当前时间：' + year + '年' + mouth + '月' + dste + '日' + hours + ':' + minu + ':' + cond
+    }, 1000)
+    dian.onclick = function () {
+        if (dian.innerHTML == '停止') {
+            dian.innerHTML = '点击'
+            dian.className = 'dian'
+            clearInterval(tt)
+        } else {
+            dian.innerHTML = '停止'
+            dian.className = 'dian2'
+
+            tt = setInterval(function () {
+                var index = Math.floor(Math.random() * obj.length)
+                tit.innerHTML = '今日幸运儿：' + obj[index].name
+            }, 50)
+        }
+    }
+    nan.onclick = function () {
+        if (nan.innerHTML == '停止') {
+            nan.innerHTML = '男生'
+            nan.className = 'dian'
+            clearInterval(ti)
+        } else {
+            nan.innerHTML = '停止'
+            nan.className = 'dian2'
+            ti = setInterval(function () {
+                var inde = Math.floor(Math.random() * arr1.length)
+                tit.innerHTML = '男生幸运儿：' + arr1[inde]
+
+            }, 50)
+        }
+
+    }
+    nv.onclick = function () {
+        if (nv.innerHTML == '停止') {
+            nv.innerHTML = '女生'
+            nv.className = 'dian'
+            clearInterval(n)
+        } else {
+            nv.innerHTML = '停止'
+            nv.className = 'dian2'
+            n = setInterval(function () {
+                let ntnt = Math.floor(Math.random() * arr2.length)
+                tit.innerHTML = '女生幸运儿：' + arr2[ntnt]
+            }, 50)
+        }
+    }
+    sh.onclick = function () {
+        if (sh.innerHTML == '停止') {
+            sh.innerHTML = '双人'
+            sh.className = 'dian'
+            clearInterval(tt)
+        } else {
+            sh.innerHTML = '停止'
+            sh.className = 'dian2'
+
+            tt = setInterval(function () {
+                var index = Math.floor(Math.random() * obj.length)
+                var i = Math.floor(Math.random() * arr.length)
+                tit.innerHTML = '今日幸运儿：' + obj[index].name + ',' + arr[i].name
+            }, 50)
+        }
+    }
+</script>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .reght {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 500px;
+        height: 200px;
+    }
+
+    span {
+        margin: 7px;
+        background-image: linear-gradient(90deg,
+                rgba(255, 215, 0, 1) 0%,
+                rgba(220, 20, 60, 1) 33.3%,
+                rgba(248, 110, 0, 1) 66.6%,
+                rgba(255, 215, 0, 1) 100%);
+        /*chrome私有样式，加前缀，文字显示背景图片*/
+        -webkit-background-clip: text;
+        /*文字颜色设为透明*/
+        color: transparent;
+        /*扩大背景区域*/
+        background-size: 300% 100%;
+        background-repeat: repeat;
+
+        animation: preview-cover 2s infinite linear;
+    }
+
+    @keyframes preview-cover {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: -150% 0;
+        }
+
+    }
+
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        margin-top: 200px;
+    }
+
+    .tit {
+        margin-right: 100px;
+        background-image: linear-gradient(90deg,
+                rgba(242, 141, 120) 0%,
+                rgba(244, 164, 141) 33.3%,
+                rgba(215, 148, 154) 66.6%,
+                rgba(203, 123, 131) 100%);
+        /*chrome私有样式，加前缀，文字显示背景图片*/
+        -webkit-background-clip: text;
+        /*文字颜色设为透明*/
+        color: transparent;
+        /*扩大背景区域*/
+        background-size: 300% 100%;
+        background-repeat: repeat;
+
+        animation: preview-cover 2s infinite linear;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/1p/wallhaven-1pol63.png?w=2560&h=1440&fmt=webp');
+        background-size: 100%, 100%;
+
+    }
+
+    .dian {
+        width: 100px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        background-color: aqua;
+        color: #fff;
+    }
+
+    .dian2 {
+        width: 100px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        background-color: red;
+        color: #fff;
+    }
+
+    .nan {
+        width: 100px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        background-color: aqua;
+        color: #fff;
+    }
+
+    .nv {
+        width: 100px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        background-color: aqua;
+        color: #fff;
+    }
+
+    .sh {
+        width: 100px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        background-color: aqua;
+        color: #fff;
+    }
+</style>
+
+</html>

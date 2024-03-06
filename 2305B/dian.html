@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>2305A班点名器</h1>
+    <p class="p">
+        <span>小红</span>
+        <span>小明</span>
+        <span>小绿</span>
+        <span>小兰</span>
+        <span>小强</span>
+        <span>小资</span>
+    </p>
+    <p class="dian"></p>
+    <button class="btn">点击</button>
+    <div id="show_time">当前时间</div>
+</body>
+<script>
+    var dain = document.querySelector('.dian')
+    var btn = document.querySelector('.btn')
+    var arr = ['小红', '小兰', '小红', '小明', '小钱', '小强', '小高']
+    var t = null
+
+    //setInterval(fn,i) 定时器，每隔i秒执行fn
+    setInterval(function () {
+        var time = new Date();
+        var year = time.getFullYear();  //获取年份c
+        var month = time.getMonth() + 1;  //获取月份
+        var day = time.getDate();   //获取日期
+        var hour = checkTime(time.getHours());   //获取时
+        var minute = checkTime(time.getMinutes());  //获取分
+        var second = checkTime(time.getSeconds());  //获取秒
+        /****当时、分、秒、小于10时，则添加0****/
+        function checkTime(i) {
+            if (i < 10) return "0" + i;
+            return i;
+        }
+
+        var box = document.getElementById("show_time");
+        box.innerHTML = '当前时间:' + year + "年" + month + "月" + day + "日  " + hour + ":" + minute + ":" + second;
+    }, 1000);
+    btn.onclick = function () {
+        if (btn.innerHTML === '停止') {
+            btn.innerHTML = '点击'
+            clearInterval(t)
+        } else {
+            btn.innerHTML = '停止'
+            t = setInterval(function () {
+                var indd = Math.floor(Math.random() * arr.length)
+                dain.innerHTML = arr[indd]
+            }, 100)
+
+        }
+    }
+
+</script>
+<style>
+    body {
+        background-color: aqua;
+        background-image: url('./u=2353191314\,4141806425&fm=253&fmt=auto&app=138&f=JPEG.webp');
+        background-size: 50%;
+        opacity: 2.0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .p {
+        width: 500px;
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .dian {
+        width: 50px;
+        height: 30px;
+        background-color: aqua;
+        border-radius: 10px;
+
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+</html>
